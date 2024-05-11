@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "vitepress-theme-xyz": [
+        "./src/index.ts"
+      ]
+    }
+  },
+  "include": [
+    "src",
+    // "demo/.vitepress/theme",
+    "demo/.vitepress/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

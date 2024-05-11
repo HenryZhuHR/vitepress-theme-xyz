@@ -1,0 +1,73 @@
+{
+  "name": "vitepress-theme-xyz",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.0.6",
+  "description": "A VitePress theme for personal homepage",
+  "author": "HenryZhuHR <henryzhuhr@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/HenryZhuHR/vitepress-theme-xyz",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HenryZhuHR/vitepress-theme-xyz.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HenryZhuHR/vitepress-theme-xyz/issues"
+  },
+  "keywords": [
+    "vite",
+    "vue",
+    "vitepress",
+    "theme"
+  ],
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "main": "src/index.ts",
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "prepare": "npx simple-git-hooks",
+    "lint": "prettier --check --write --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+    "lint:fail": "prettier --check --parser typescript \"{__tests__,docs,src,types}/**/*.ts\"",
+    "type": "tsc --noEmit",
+    "test": "npm run lint && npm run type",
+    "dev": "vitepress dev demo",
+    "build": "vitepress build demo",
+    "serve": "npm run demo-build && vitepress serve demo",
+    "release": "changelogen --release --push && pnpm publish",
+    "release:minor": "changelogen --release --minor --push && pnpm publish",
+    "release:major": "changelogen --release --major --push && pnpm publish",
+    "release:patch": "changelogen --release --patch --push && pnpm publish"
+  },
+  "peerDependencies": {
+    "vitepress": "^1.0.0-alpha.73"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@types/node": "^20.12.11",
+    "changelogen": "^0.5.5",
+    "commitlint-config-unjs": "^1.0.1",
+    "eslint": "^9.2.0",
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.2.5",
+    "simple-git-hooks": "^2.11.1",
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11",
+    "vitepress": "^1.1.4",
+    "vitest": "^1.6.0",
+    "vue": "^3.4.27"
+  },
+  "pnpm": {
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "@algolia/client-search"
+      ],
+      "allowedVersions": {
+        "typescript": "5"
+      }
+    }
+  }
+}
