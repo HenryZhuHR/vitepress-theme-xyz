@@ -43,7 +43,7 @@
     "release:patch": "changelogen --release --patch --push && pnpm publish"
   },
   "peerDependencies": {
-    "vitepress": "^1.0.0-alpha.73"
+    "vitepress": "^1.1.4"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",

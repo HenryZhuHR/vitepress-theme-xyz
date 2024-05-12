@@ -9,13 +9,13 @@ import './style.css'
 
 export { default as TestThemeComponent } from './components/TestThemeComponent.vue'
 
-interface VPTheme {
+interface XyzTheme {
   Layout: Component
   enhanceApp: (ctx: EnhanceAppContext) => Awaitable<void>
   extends?: Theme
 }
 
-const theme = {
+const xyz_theme: XyzTheme = {
   ...DefaultTheme,
   Layout: ThemeLayout,
   enhanceApp({ app, router, siteData }) {
@@ -23,8 +23,15 @@ const theme = {
     DefaultTheme.enhanceApp({ app, router, siteData })
     app.component('TestThemeComponent', TestThemeComponent)
   },
-} as VPTheme
+}
 
-export { theme as VPTheme }
+export { xyz_theme as XyzTheme }
 
-export type * from './config'
+export type { XyzThemeConfig } from './config'
+export { xyzThemeConfig } from './config'
+
+// export {
+//   type XyzThemeConfig,
+//   xyzThemeConfig
+// } from './config'
+

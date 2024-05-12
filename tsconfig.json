@@ -8,6 +8,9 @@
       ]
     }
   },
+  "files": [ // 指定待编译文件
+    "./src/index.ts"
+  ],
   "include": [
     "src",
     // "demo/.vitepress/theme",
@@ -15,5 +18,8 @@
   ],
   "exclude": [
     "node_modules"
-  ]
+  ],
+  "ts-node": {
+    "esm": true
+  }
 }
